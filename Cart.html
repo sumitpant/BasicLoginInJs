@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your Cart</title>
+        <style>
+            body{
+                background: cyan;
+            }
+            .btn{
+                margin-left: 800px;
+                margin-top:50px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <button class="btn" onclick="clearCart()">Clear Cart</button>
+        <script >
+           // let products=['clothing','footwear','health']
+            //let queryString = decodeURIComponent(window.location.search);
+            //let items=queryString.substring(1).substring(6).split(',');
+            //console.log(items)
+            document.write("<center>")
+                // for(let i=0;i<items.length;i++)
+                // {
+                //     if(i===0 && items[i]!=0)
+                //     {
+                        
+                //         document.write("<li> You purchased"+ items[i]+" from" +products[i]+"</li>")
+                //     }
+                //     else if(i==1 && items[i]!=0)
+                //     {
+                //         document.write("<li> You purchased"+ items[i]+" from" +products[i]+"</li>")
+                //     }
+                //     else if(i==2 && items[i]!=0)
+                //     {
+                //         document.write("<li> You purchased"+ items[i]+" from" +products[i]+"</li>")
+                //     }
+                // }
+              
+              if(localStorage.getItem('clothing')>0)
+              {
+                 document.write("<li>You Purchased"+localStorage.getItem('clothing')+" clothing materials</li>");
+              }
+               if(localStorage.getItem('footwear')>0)
+              {
+                document.write("<li> You Purchased"+localStorage.getItem('footwear')+" footwears </li>");
+              }
+               if(localStorage.getItem('health')>0)
+              {
+                document.write("<li> You Purchased"+localStorage.getItem('health')+"heath materials</li>")
+              }
+               if(localStorage.getItem('school')>0){
+                document.write("<li> You Purchased"+localStorage.getItem('school')+"Study Materials</li>");
+              }
+              
+            
+           
+            document.write("</center>")
+            function clearCart()
+            {
+               localStorage.setItem('clothing',0)
+               localStorage.setItem("footwear",0);
+               localStorage.setItem("health",0);
+               localStorage.setItem("school",0);
+            }
+
+            
+        </script>
+
+    </body>
+</html>
