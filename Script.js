@@ -1,4 +1,7 @@
-
+let queryString = decodeURIComponent(window.location.search);
+let name=queryString.substring(1).substring(6)
+console.log(name.substring(6))
+document.getElementById("name").innerHTML='Dear '+ name +'! Welcome to Mega Cart'
 //let arr=[0,0,0,0];
 localStorage.setItem("clothing",0);
 localStorage.setItem("footwear",0);
