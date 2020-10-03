@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head> <title>Login</title></head>
+    <style>
+        body{
+            background: turquoise;
+        }
+        form{
+            text-align: center;
+        }
+        .login-form {
+            display: flex;
+            justify-content: center;
+    flex-direction: column;
+    align-items: center;
+        }
+       
+    </style>
+    <body>
+       <h1 style="text-align: center;"> The Mega Cart</h1>
+       <div class="login-form">
+       <!-- <form id='forms'> -->
+           <label for ="username">Enter UserName</label>
+           <input type="text" id="username">
+           <br/>
+           <br/>
+           <label for="password">Enter Password</label>
+           <input type="password" id="password">
+           <br/>
+           <br/>
+       <!-- </form> -->
+       <button onclick="validate()">Login</button>
+    </div>
+       <p style="text-align: center;">New User? SIgn up Here <a href="SignUp.html">Signup</a></p>
+       <p id="err"></p>
+       <script>
+          function validate()
+           {
+            //    console.log(document.getElementById('username').value=="");
+          if(document.getElementById('username').value==""||document.getElementById('password').value=="")
+          {
+              document.getElementById("err").innerHTML='Enter Details';
+          }
+          else{
+              let name=document.getElementById('username').value;
+              let password=document.getElementById('password').value
+              let namefetched=localStorage.getItem('username');
+              let passwordfetched=localStorage.getItem('password')
+              
+              if(namefetched!=='')
+              {
+                  if(passwordfetched===password && name===namefetched)
+                  {
+                     
+                     console.log('Welcome');
+                    // let newUrl="Mainpage.html";
+                   window.location.href="http://127.0.0.1:5500/MainPage.html"; 
+               // window.location.replace("www.google.com")
+                //window.location.assign("./Mainpage.html");
+                    return false;
+                   
+                  }
+                  else{
+                      document.getElementById('err').innerHTML=' Incorrect Password ';
+                  }
+
+              }
+              else{
+                  document.getElementById('err').innerHTML='YOu need to signUp'
+              }
+          }
+           }
+       </script>
+    </body>
+</html>
